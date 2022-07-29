@@ -1,3 +1,5 @@
+# Slowscape Edits
+Add operator `&` - Midi note receive
 # ORCΛ
 
 <img src="https://raw.githubusercontent.com/hundredrabbits/100r.co/master/media/content/characters/orca.hello.png" width="300"/>
