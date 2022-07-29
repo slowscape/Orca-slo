@@ -536,6 +536,20 @@ library.$ = function OperatorSelf (orca, x, y, passive) {
   }
 }
 
+// midi receive
+library['&'] = function OperatorInMidi(orca,x,y,passive){
+  Operator.call(this, orca, x, y, '&', true)
+  this.name = 'Midi Rec'
+  this.info = 'Receives External Midi Notes'
+
+  this.ports.output = { x: 0, y: 1, sensitive: true, output: true }
+
+  this.operation = function (force = false) {
+    console.log('Stored Midi', client.midiRec)
+    return client.midiRec
+  }
+}
+
 library[':'] = function OperatorMidi (orca, x, y, passive) {
   Operator.call(this, orca, x, y, ':', true)
 
