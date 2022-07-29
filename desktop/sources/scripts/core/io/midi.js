@@ -139,6 +139,17 @@ function Midi (client) {
         console.log('MIDI', 'Stop Received')
         client.clock.stop()
         break
+      // Midi receive
+      case 0x90:
+        //                                note           vel         len
+        console.log('MIDI', 'Note on', msg.data[1], msg.data[2], msg.data[3])
+        //console.log('Converted', this.convert(msg.data[1]))
+        client.midiRec = this.convert(msg.data[1])
+        break
+      case 0x80:
+        console.log('MIDI', 'Note off', msg.data[1])
+        //client.midiRec = ''
+        break
     }
   }
 
