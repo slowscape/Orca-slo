@@ -25,6 +25,9 @@ function Client () {
   this.cursor = new Cursor(this)
   this.commander = new Commander(this)
   this.clock = new Clock(this)
+  
+  // midi receive
+  this.midiRec = ''
 
   // Settings
   this.scale = window.devicePixelRatio
